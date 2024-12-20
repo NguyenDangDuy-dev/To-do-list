@@ -1,0 +1,347 @@
+/* RESET */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+/* Variable */
+:root{
+    --BODY--BGCOLOR: #0c0d0e;
+    --BODY--COLOR: white;
+
+    --HEAD--BDBOTTOM: 1px solid rgba(255, 0, 0, 0.482);
+    --HEAD--BGCOLOR: #080808;
+    --H1--COLOR: #f14769;
+
+    --TASK-ADD--BGCOLOR: #1b1d1f;
+    --TASK-ADD--BDBOTTOM: 1px solid #6d6559;
+    --TASK-ADD-IP--COLOR: white;
+    --TASK-ADD-IP--CARET: white;
+    --TASK-ADD-PLHD--COLOR: #6ab4f0;
+    --TASK-ADD-PLHD-FC-COLOR: white;
+
+    --TASK-UTILITY--BGCOLOR: #17191a;
+    --TASK--U-SUBMIT-COLOR-HOVER: #1e2122;
+    --TASK--U-SUBMIT-BORDER: 1px solid #6d6559;
+    --TASK--U-SUBMIT-COLOR: #aca489;
+
+    --CHECKMARK--BORDER: 1px solid #6ab4f0;
+
+
+    --DELETE--BT-BORDER: red;
+    --DELETE--BT-BGCOLOR: red;
+    --DELETE--BORDER-COLOR: #7f0404;
+
+    --IMPORTANT--BT-BORDER: rgba(255, 255, 0, 0.612);
+    --IMPORTANT--BT-BGCOLOR: rgba(255, 255, 0, 0.612) ;
+    --IMPORTANT--BORDER-COLOR: rgba(255, 255, 0, 0.623);
+
+    --CHECKMARK-DONE2: white;
+    --CHECKMARK-DONE: #6ab4f0;
+    --CHECKMARK-IMPORTANT: yellow;
+    --CHECKMARK-DELETE: red;
+    --CHECKMARK-DELETE2: white;
+}
+
+/* BLOCK */
+body{
+    margin: 0;
+    background-color: var(--BODY--BGCOLOR);
+    color: var(--BODY--COLOR);
+    display: flex;
+    flex-direction: column;
+}
+/* ELEMENT */
+/* MODIFIER */
+
+/* BLOCK - header */
+.head__container{
+    background-color: var(--HEAD--BGCOLOR);
+    border-bottom: var(--HEAD--BDBOTTOM);
+}
+/* ELEMENT */
+h1{
+    color: var(--H1--COLOR);
+    padding: 1.5rem;
+    margin: 0;
+}
+/* MODIFIER */
+
+
+/* BLOCK - main - form */
+
+
+
+/* ELEMENT */
+/* Complete side */
+.completed{
+    padding: 0.75rem 2.2rem;
+    border-bottom: var(--TASK-ADD--BDBOTTOM);
+    margin: 0 1rem 1rem 1rem;
+    position: relative;
+}
+.completed::after{
+   content: '';
+   position: absolute;
+   background-color: red;
+   width: 1px;
+   height: 10px;
+   left: 13px;
+   top: 17.8px;
+   transform: rotate(140deg);
+}
+.completed::before{
+   content: '';
+   position: absolute;
+   background-color: red;
+   width: 1px;
+   height: 10px;
+   left: 19.5px;
+   top: 18px;
+   transform: rotate(220deg);
+}
+
+
+.task__form{
+    padding: 1rem;
+}
+/* task add */
+.task-add{
+    background-color: var(--TASK-ADD--BGCOLOR);
+    padding: 0.75rem 1rem;
+    display: flex;
+    position: relative;
+    border-bottom: var(--TASK-ADD--BDBOTTOM);
+    gap: 0.5rem;
+}
+
+.button__switch{
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+    margin-left: 0.50rem;
+    align-self: center;
+    background-color: transparent;
+    border: var(--CHECKMARK--BORDER);
+    cursor: pointer;
+}
+
+/* Change input text */
+.task-add input[type="text"]{
+    color: var(--TASK-ADD-IP--COLOR);
+    padding: 0.25rem 0.25rem 0 0.25rem;
+    caret-color: var(--TASK-ADD-IP--CARET);    
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+    position: relative;
+}
+
+.task-add input[type="text"]::placeholder{
+    color: var(--TASK-ADD-PLHD--COLOR)
+}
+.task-add input[type="text"]:focus::placeholder{
+    color: var(--TASK-ADD-PLHD-FC-COLOR);
+}
+
+/* Task information submit */
+.task__utility{
+    background-color: var(--TASK-UTILITY--BGCOLOR);
+    padding: 0.25rem 1rem;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.button__submit{
+    background-color: transparent;
+    border: var(--TASK--U-SUBMIT-BORDER);
+    padding: 0.40rem 0.50rem;
+    color: var(--TASK--U-SUBMIT-COLOR);
+    cursor:pointer;
+}
+.button__submit:hover{
+    background-color: var(--TASK--U-SUBMIT-COLOR-HOVER);
+}
+/* Task information more */
+.task__utility-more {
+   display: flex;
+   align-items: center;
+}
+/* MODIFIER */
+
+
+/* BLOCK - main - ul - item added */
+/* ELEMENT */
+.button__general{
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+    margin-left: 0.50rem;
+    align-self: center;
+    background-color: transparent;
+    border: var(--CHECKMARK--BORDER);
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+}
+/* RESET LIST tag */
+li{
+    list-style-type: none;
+}
+/* The Same button */
+/* UL */
+.itemList{
+    margin-top: 0;
+    padding: 0;
+    margin: 0 1rem 1rem 1rem;
+    font-size: 1rem;
+}
+.itemList.itemListDone{
+    margin-top: 0;
+    padding: 0;
+    margin: 0 1rem 1rem 1rem;
+    font-size: 1rem;
+}
+/* LI */
+.itemAdded{
+    margin-top: 0.75rem;
+    background-color: var(--TASK-ADD--BGCOLOR);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: row;
+}
+/* button done */
+.container__button_done{
+    display: flex;
+    justify-content: flex-start ;
+    width: auto;
+}
+.button__done{
+    align-items: center;
+}
+.container__text{
+    padding: 0;
+    width: 100%;
+}
+/* text */
+.textItem{
+    margin: 0 0 0 0.7rem;
+    max-width: 100%;
+    overflow-wrap:break-word;
+}
+.container__button__rm-im{
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    flex-direction: row;
+}
+/* REMOVE BUTTON */
+.button__remove{
+    margin: 0 0 0 1rem;
+    border-color: var(--DELETE--BORDER-COLOR);
+    position: relative;
+} 
+.button__remove::before{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 7px;
+    width: 1px;
+    background-color: var(--CHECKMARK-DELETE);
+    transform: rotate(200deg);
+    left: 7.5px;
+} 
+.button__remove::after{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    width: 1px;
+    background-color: var(--CHECKMARK-DELETE);
+    transform: rotate(120deg);
+    left: 4.2px;
+    top: 5.5px;
+} 
+.button__remove:hover::after, .button__remove:hover::before{
+    opacity: 1;
+}
+.button__remove:active::after, .button__remove:active::before{
+    opacity: 1;
+    background-color: var(--CHECKMARK-DELETE2);
+}
+.button__remove:active{
+    background-color: var(--DELETE--BT-BGCOLOR);
+} 
+/* IMPORTANT BUTTON */
+.button__important{
+    margin: 0 0 0 1rem;
+    border-color: var( --IMPORTANT--BORDER-COLOR);
+    position: relative;
+}
+.button__important::after{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 7px;
+    width: 1px;
+    background-color: var(--CHECKMARK-IMPORTANT);
+    transform: rotate(200deg);
+    left: 7.5px;
+}
+.button__important::before{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    width: 1px;
+    background-color: var(--CHECKMARK-IMPORTANT);
+    transform: rotate(120deg);
+    left: 4.2px;
+    top: 5.5px;
+}
+.button__important:hover::after, .button__important:hover::before{
+    opacity: 1;
+}
+.button__done{
+    position: relative; 
+}
+.button__done::after{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 7px;
+    width: 1px;
+    background-color: var(--CHECKMARK-DONE);
+    transform: rotate(200deg);
+    left: 7.5px;
+}
+.button__done::before{
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    width: 1px;
+    background-color: var(--CHECKMARK-DONE);
+    transform: rotate(120deg);
+    left: 4.2px;
+    top: 5.5px;
+}
+.button__done:hover::after, .button__done:hover::before{
+    opacity: 1;
+}
+.done__task{
+    background-color: var(--CHECKMARK-DONE);
+    opacity: 1;
+}
+/* MODIFIER */
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/to-do.css" />
+    <script src="script/todo.js" defer></script>
+  </head>
+  <body>
+    <header class="head__container">
+      <h1>To do</h1>
+    </header>
+    <main class="main__container">
+      <form class="task__form">
+        <div class="task-add">
+          <button type="button" class="button__switch button__general"></button>
+          <input
+            type="text"
+            placeholder="Add a task"
+            id="task"
+            maxlength="300"
+          />
+        </div>
+
+        <div class="task__utility">
+          <div class="task__utility-more">
+            <button type="button" class="button__general"></button>
+          </div>
+          <button type="submit" class="button__submit">Add</button>
+        </div>
+      </form>
+
+      <ul class="itemList">
+   
+      </ul>
+
+      <p class="completed">Completed</p>
+
+      <ul class="itemList itemListDone">
+
+      </ul>
+      
+    </main>
+  </body>
+</html>
